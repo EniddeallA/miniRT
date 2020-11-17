@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 02:48:50 by akhalid           #+#    #+#             */
-/*   Updated: 2020/11/17 17:32:21 by akhalid          ###   ########.fr       */
+/*   Updated: 2020/11/15 13:35:05 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,7 @@ void    sphereInfo(char *line, t_sphere **sp);
 void    cylinderInfo(char *line, t_cylinder **cy);
 void    triangleInfo(char *line, t_triangle **tr);
 void    raytrace(t_scene s, t_object o);
-void    render(void *mlx, void *window, t_scene s, t_object o);
+void startRt(void *mlx, void *window, t_scene s, t_object o);
 
 /*
 
