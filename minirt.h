@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 02:48:50 by akhalid           #+#    #+#             */
-/*   Updated: 2020/11/17 19:22:09 by akhalid          ###   ########.fr       */
+/*   Updated: 2020/11/18 20:35:59 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,13 @@ typedef struct  s_material{
     t_vector    diffuse;
     float       reflection;
 }               t_material;
+
+typedef struct  s_options
+{
+    t_object    o;
+    t_scene     s;
+    
+}               t_options;
 
 
 void    readRtFile(int fd);
