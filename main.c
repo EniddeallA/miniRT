@@ -6,24 +6,25 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 17:26:11 by akhalid           #+#    #+#             */
-/*   Updated: 2020/10/26 12:16:00 by akhalid          ###   ########.fr       */
+/*   Updated: 2020/11/19 23:37:27 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
  #include "minirt.h"
 
- int main()
+ int main(int argc, char **argv)
  {
-     //int argc, char **argv
     int fd;
 
-    // if (argc == 1)
-    //     write(1, "'.rt' file not provided", ft_strlen("'.rt' file not provided"));
-    // else if(argc == 2)
-    // {
-    //     fd = open(argv[2], O_RDONLY);
-    //     readRtFile(fd);
-    // }
-    fd = open("./file.rt", O_RDONLY);
-    readRtFile(fd);
- }
+    if (argc < 2 || argc > 3)
+		return (0);
+	else
+	{
+        fd = open(argv[1], O_RDONLY);
+		if (argc == 2)
+			raytrace(fd, 0);
+		else if (ft_strncmp(argv[2], "--save", ft_strlen(argv[2])) == 0)
+			raytrace(fd, 1);
+	}
+	return (0);
+}

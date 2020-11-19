@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 02:48:50 by akhalid           #+#    #+#             */
-/*   Updated: 2020/11/18 20:35:59 by akhalid          ###   ########.fr       */
+/*   Updated: 2020/11/19 23:44:01 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ typedef struct      s_scene
 {
     t_resolution    res;
     t_ambientLight  al;
+    t_object        *object;
 }                   t_scene;
 
 typedef struct  s_object
@@ -158,15 +159,25 @@ typedef struct  s_material{
     float       reflection;
 }               t_material;
 
+typedef struct  s_img
+{
+    void        *img;
+    char        *addr;
+    int         bits_per_pixel;
+    int         line_length;
+    int         endian;
+}               t_img;
+
 typedef struct  s_options
 {
-    t_object    o;
-    t_scene     s;
-    
+    t_scene *scene;
+    void    *id;
+    void    *window;
+    t_img   image;
 }               t_options;
 
 
-void    readRtFile(int fd);
+t_scene *readRtFile(int fd);
 void    handleRtFile(char *line, t_scene *s, t_object *o);
 void    objectsInfo(char *line, t_object *o);
 void    sceneInfo(char *line, t_scene *o);
@@ -180,23 +191,6 @@ void    squareInfo(char *line, t_square **sq);
 void    sphereInfo(char *line, t_sphere **sp);
 void    cylinderInfo(char *line, t_cylinder **cy);
 void    triangleInfo(char *line, t_triangle **tr);
-void    raytrace(t_scene s, t_object o);
-void    render(void *mlx, void *window, t_scene s, t_object o);
-
-/*
-
-    ** IMAGES
-
-*/
-
-typedef struct  s_img
-{
-    void        *img;
-    char        *addr;
-    int         bits_per_pixel;
-    int         line_length;
-    int         endian;
-}               t_img;
-
+void    raytrace(int fd, int save);
 int		argbconverter(int a, int r, int g, int b);
-void    my_mlx_pixel_put(t_img *data, int x, int y, int color);
+void    render(t_options option, int save);

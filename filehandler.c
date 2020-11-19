@@ -258,33 +258,38 @@ void triangleInfo(char *line, t_triangle **tr)
 	temp->next = new;
 }
 
+// void readRtFile(int fd)
+// {
+// 	char *buff;
+//     ssize_t res;
+//     char *line;
+//     t_scene s;
+//     t_object o;
 
-void readRtFile(int fd)
+//     ft_memset(&s, 0, sizeof(s));
+//     ft_memset(&o, 0, sizeof(o));
+//     if ( fd <= 0 || !(buff = (char*)malloc(sizeof(char*) * 100)) )
+//         return;
+//     line = ft_strdup("");
+//     while((res = read(fd, buff, 1)) > 0)
+//     {
+//         buff[res] = '\0';
+//         line = ft_strjoin(line, buff);
+//         if (ft_strchr(line, '\n') == 1)
+//         {
+//             handleRtFile(line, &s, &o);
+//             free(line);
+//             line = NULL;
+//             line = ft_strdup("");
+//         }
+//     }
+//     free(buff);
+// 	free(line);
+// 	raytrace(s, o);
+// }
+
+t_scene *readRtFile(int fd)
 {
-	char *buff;
-    ssize_t res;
-    char *line;
-    t_scene s;
-    t_object o;
+	
 
-    ft_memset(&s, 0, sizeof(s));
-    ft_memset(&o, 0, sizeof(o));
-    if ( fd <= 0 || !(buff = (char*)malloc(sizeof(char*) * 100)) )
-        return;
-    line = ft_strdup("");
-    while((res = read(fd, buff, 1)) > 0)
-    {
-        buff[res] = '\0';
-        line = ft_strjoin(line, buff);
-        if (ft_strchr(line, '\n') == 1)
-        {
-            handleRtFile(line, &s, &o);
-            free(line);
-            line = NULL;
-            line = ft_strdup("");
-        }
-    }
-    free(buff);
-	free(line);
-	raytrace(s, o);
-}
+} 
