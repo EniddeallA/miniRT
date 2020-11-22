@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:18:51 by akhalid           #+#    #+#             */
-/*   Updated: 2020/11/21 17:07:38 by akhalid          ###   ########.fr       */
+/*   Updated: 2020/11/22 17:30:52 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,24 @@
 #include <sys/uio.h>
 #include <mlx.h>
 
+#include "list.h"
+
+typedef struct  s_color
+{
+    float r;
+    float g;
+    float b;
+}               t_color;
+
 typedef struct  s_scene
 {
-    
+    int width;
+    int height;
+    double ambient_ratio;
+    t_color ambient;
+    t_list *cameras;
+    t_list *lights;
+    t_list *objects;
 }               t_scene;
 
 
