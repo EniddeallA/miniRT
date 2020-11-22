@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list.h                                             :+:      :+:    :+:   */
+/*   object.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/22 17:03:36 by akhalid           #+#    #+#             */
-/*   Updated: 2020/11/22 18:59:03 by akhalid          ###   ########.fr       */
+/*   Created: 2020/11/22 18:57:44 by akhalid           #+#    #+#             */
+/*   Updated: 2020/11/22 19:01:27 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_H
-# define LIST_H
+#ifndef OBJECT_H
+# define OBJECT_H
 
-#include "minirt.h"
+#include "color.h"
 
-typedef struct  s_list
+typedef enum	e_object_type
 {
-    void            *content;
-    struct s_list   *next;
-}               t_list;
+	SPHERE,
+	CUBE,
+	PLANE,
+	LIGHT,
+	TRIANGLE,
+	SQUARE,
+	CYLINDER,
+}				t_otype;
 
-t_list			*ft_lstlast(t_list *lst);
-void            ft_lstaddback(t_list **alst, t_list *new);
-t_list			*ft_lstnew(void *content);
-int				ft_lstsize(t_list *lst);
+typedef struct	s_object
+{
+	t_otype		type;
+	void		*ptr;
+	t_fcolor	color;
+}				t_object;
+
 
 #endif
