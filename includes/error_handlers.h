@@ -25,6 +25,7 @@ void	check_color(t_fcolor ambient);
 int		check_rgb(char **split);
 int		check_floaters(char *split);
 int     check_file(char *split);
+void	free_tab(char **tab);
 
 
 #endif

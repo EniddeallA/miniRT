@@ -62,3 +62,12 @@ int	check_file(char *split)
 	}
 	return (0);
 }
+
+void	free_tab(char **tab){
+
+	int i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab[i]);
+	free(tab);
+}
