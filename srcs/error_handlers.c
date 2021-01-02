@@ -17,6 +17,8 @@ int		check_line(char *line)
 	int i;
 
 	i = 0;
+	if (line[i] == '#')
+		return (1);
 	while (line[i])
 	{
 		if (!allowed_symbol(line[i]) && i > 2)

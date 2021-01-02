@@ -28,6 +28,8 @@ void		parse_line(t_scene *s, char **split)
 {
 	if (line_fields(split) == 0)
 		return ;
+	else if (!ft_strncmp(split[0], "#", 1))
+		return ;
 	else if (!ft_strncmp(split[0], "R", 1))
 		parse_resolution(s, split);
 	else if (!ft_strncmp(split[0], "A", 1))

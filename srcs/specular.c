@@ -29,7 +29,7 @@ double		compute_specular(t_light light, t_inter i)
 	back_view_ray = substract(i.hit_point, i.r.origin);
 	normalize_vector(&back_view_ray);
 	result = fmax(dot_product(reflectance_vector, back_view_ray), 0);
-	result = pow(result, 10);
+	result = pow(result, 40);
 	return (result);
 }
 
