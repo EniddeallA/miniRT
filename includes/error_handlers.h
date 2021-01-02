@@ -22,5 +22,9 @@ void    handle_error(char *error);
 void    check_scene(t_scene *s);
 int		check_fields(char **splitted);
 void	check_color(t_fcolor ambient);
+int		check_rgb(char **split);
+int		check_floaters(char *split);
+int     check_file(char *split);
+
 
 #endif

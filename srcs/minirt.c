@@ -85,6 +85,5 @@ int		rerender(int key, t_options *options)
 
 int		fexit(int key, t_options *options)
 {
-	mlx_destroy_window(options->mlx, options->window);
-	exit(0);
+	exit(EXIT_SUCCESS);
 }

@@ -15,9 +15,11 @@
 void	parse_resolution(t_scene *s, char **split)
 {
 	if (check_fields(split) != 3)
-		handle_error("Resolution : Field missing/overflow");
+		handle_error("Resolution : Field missing/overflow.");
 	if (s->width || s->height)
 		handle_error("Resolution can only be set once in a scene.");
+	if (!check_floaters(split[1]) || !check_floaters(split[2]))
+		handle_error("Resolution can't be float.");
 	s->width = ft_atoi(split[1]);
 	s->height = ft_atoi(split[2]);
 }
@@ -40,11 +42,13 @@ void	parse_camera(t_scene *s, char **split)
 	t_camera	*c;
 
 	if (check_fields(split) != 4)
-		handle_error("Camera : Field missing/overflow");
+		handle_error("Camera : Field missing/overflow.");
 	c = malloc(sizeof(t_camera));
 	parse_coords(&(c->origin), split[1]);
-	parse_coords(&(c->direction), split[2]);
+	parse_normal(&(c->direction), split[2]);
 	normalize_vector(&(c->direction));
+	if (!check_floaters(split[3]))
+		handle_error("Camera FOV range : [0,180].");
 	c->fov = ft_atoi(split[3]);
 	if (c->fov < 0 || c->fov > 180)
 		handle_error("Camera FOV range : [0,180].");
@@ -56,7 +60,7 @@ void	parse_light(t_scene *s, char **split)
 	t_light	*l;
 
 	if (check_fields(split) != 4)
-		handle_error("Light : Field missing/overflow");
+		handle_error("Light : Field missing/overflow.");
 	l = malloc(sizeof(t_light));
 	parse_coords(&(l->origin), split[1]);
 	l->intensity = ft_atod(split[2]);

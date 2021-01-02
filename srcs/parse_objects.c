@@ -22,7 +22,7 @@ void	parse_plane(t_scene *s, char **split)
 	obj = malloc(sizeof(t_object));
 	plane = malloc(sizeof(t_plane));
 	parse_coords(&(plane->p), split[1]);
-	parse_coords(&(plane->normal), split[2]);
+	parse_normal(&(plane->normal), split[2]);
 	normalize_vector(&(plane->normal));
 	parse_color(&(obj->color), split[3]);
 	check_color(obj->color);
@@ -59,7 +59,7 @@ void	parse_square(t_scene *s, char **split)
 	obj = malloc(sizeof(t_object));
 	square = malloc(sizeof(t_square));
 	parse_coords(&(square->p), split[1]);
-	parse_coords(&(square->normal), split[2]);
+	parse_normal(&(square->normal), split[2]);
 	normalize_vector(&(square->normal));
 	square->length = ft_atod(split[3]);
 	parse_color(&(obj->color), split[4]);
@@ -79,7 +79,7 @@ void	parse_cylinder(t_scene *s, char **split)
 	obj = malloc(sizeof(t_object));
 	cylinder = malloc(sizeof(t_cylinder));
 	parse_coords(&(cylinder->p), split[1]);
-	parse_coords(&(cylinder->normal), split[2]);
+	parse_normal(&(cylinder->normal), split[2]);
 	normalize_vector(&(cylinder->normal));
 	cylinder->radius = ft_atod(split[3]) / 2;
 	cylinder->height = ft_atod(split[4]);

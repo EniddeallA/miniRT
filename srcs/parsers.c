@@ -17,11 +17,15 @@ void		parse_color(t_fcolor *c, char *str)
 	char	**split;
 
 	split = ft_split(str, ',');
-	if (check_fields(split) != 3)
+	if (check_fields(split) != 3 || !check_rgb(split))
+	{
+		free(split);
 		handle_error("Color format : [R,G,B]");
+	}
 	c->r = ft_atod(split[0]) / 256;
 	c->g = ft_atod(split[1]) / 256;
 	c->b = ft_atod(split[2]) / 256;
+	free(split);
 }
 
 void		parse_line(t_scene *s, char **split)
@@ -78,9 +82,10 @@ t_scene		*parse_scene(int fd)
 	{
 		split = ft_split(line, ' ');
 		if (!check_line(line))
-			handle_error("Scene contains unallowed symbols");
+			handle_error("Scene contains unallowed symbols.");
 		parse_line(s, split);
 		free(line);
+		free(split);
 	}
 	split = ft_split(line, ' ');
 	parse_line(s, split);

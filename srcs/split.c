@@ -66,6 +66,8 @@ char			**ft_split(char const *s, char c)
 			result[y][j] = '\0';
 			y++;
 		}
+		if (s[i] == ',' && s[i + 1] == ',')
+				handle_error("Scene format error.");
 		while (s[i] == c && s[i])
 			i++;
 	}

@@ -30,5 +30,6 @@ void    parse_cylinder(t_scene *s, char **split);
 void    parse_triangle(t_scene *s, char **split);
 void    parse_coords(t_vector *v, char *str);
 void    parse_color(t_fcolor *c, char *str);
+void	parse_normal(t_vector *v, char *str);
 
 #endif

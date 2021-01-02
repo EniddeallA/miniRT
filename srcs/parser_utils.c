@@ -18,10 +18,32 @@ void	parse_coords(t_vector *v, char *str)
 
 	split = ft_split(str, ',');
 	if (check_fields(split) != 3)
+	{
+		free(split);
 		handle_error("Field missing/overflow");
+	}
 	v->x = ft_atod(split[0]);
 	v->y = ft_atod(split[1]);
 	v->z = ft_atod(split[2]);
+	free(split);
+}
+
+void	parse_normal(t_vector *v, char *str)
+{
+	char	**split;
+
+	split = ft_split(str, ',');
+	if (check_fields(split) != 3)
+	{
+		free(split);
+		handle_error("Field missing/overflow");
+	}
+	v->x = ft_atod(split[0]);
+	v->y = ft_atod(split[1]);
+	v->z = ft_atod(split[2]);
+	if (v->x < -1 || v->x > 1 || v->y < -1 || v->y > 1 || v->z < -1 || v->z > 1)
+		handle_error("Orientation vector range : [-1.0,1.0].");
+	free(split);
 }
 
 int		line_fields(char **splitted)

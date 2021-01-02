@@ -12,57 +12,53 @@
 
 #include "../includes/includes.h"
 
-int		check_line(char *line)
+int	check_floaters(char *split)
 {
 	int i;
 
 	i = 0;
-	if (line[i] == '#')
-		return (1);
-	while (line[i])
+	while (split[i])
 	{
-		if (!allowed_symbol(line[i]) && i > 2)
+		if (split[i] == '.')
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-void	handle_error(char *error)
+int	check_rgb(char **split)
 {
-	write(2, "Error :\n", 8);
-	write(2, error, ft_strlen(error));
-	exit(-1);
+	int i;
+	int j;
+
+	i = check_fields(split) - 1;
+	while (i)
+	{
+		j = 0;
+		while (split[i][j])
+		{
+			if (split[i][j] == '.')
+				return (0);
+			j++;
+		}
+		i--;
+	}
+	return (1);
 }
 
-int		check_fields(char **splitted)
+int	check_file(char *split)
 {
 	int i;
 
 	i = 0;
-	while (splitted[i])
+	while (split[i])
+	{
+		if (split[i] == '.')
+			if ((split[i - 1] >= 'a' && split[i - 1] <= 'z') ||
+				(split[i - 1] >= 'A' && split[i - 1] <= 'Z') ||
+				(split[i - 1] >= '0' && split[i - 1] <= '9'))
+				return (1);
 		i++;
-	return (i);
-}
-
-void	check_scene(t_scene *scene)
-{
-	if (scene->cameras == NULL)
-		handle_error("Scene is missing cameras.");
-	if (scene->ambient.r < 0 || scene->ambient.g < 0
-	|| scene->ambient.b < 0)
-		handle_error("Ambient light range : ([0-255]).");
-	if (scene->width <= 0 || scene->height <= 0)
-		handle_error("Width and height must be positive.");
-	if (scene->width > 2560)
-		scene->width = 2560;
-	if (scene->height > 1440)
-		scene->height = 1440;
-}
-
-void	check_color(t_fcolor color)
-{
-	if (color.r < 0 || color.r > 1 || color.g < 0 || color.g > 1 ||
-		color.b < 0 || color.b > 1)
-		handle_error("Color range : ([0-255]).");
+	}
+	return (0);
 }

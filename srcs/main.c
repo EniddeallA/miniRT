@@ -43,15 +43,22 @@ int		main(int argc, char *argv[])
 	int		fd;
 
 	if (argc < 2 || argc > 3)
+	{
+		handle_error("Too few argument.");
 		return (0);
+	}	
 	else
 	{
+		if (!check_file(argv[1]))
+			handle_error("Argument usage: File name error.");
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
 			return (0);
 		if (argc == 2)
 			minirt(fd, 0);
-		else if (!ft_strncmp(argv[2], "--save", ft_strlen(argv[2])))
+		else if (!ft_strncmp(argv[2], "--save", 7))
 			minirt(fd, 1);
+		else if (ft_strncmp(argv[2], "--save", 7))
+			handle_error("Argument usage: 'file.rt' --save.");
 	}
 	return (0);
 }
