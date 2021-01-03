@@ -6,13 +6,13 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:24:34 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:27:10 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:36:33 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-t_vector	get_square_normal(t_vector hit_point, t_square object)
+t_vector	get_square_normal(t_square object)
 {
 	return (object.normal);
 }

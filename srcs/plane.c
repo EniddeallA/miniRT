@@ -6,13 +6,13 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:24:29 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:26:52 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:36:13 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-t_vector	get_plane_normal(t_vector hit_point, t_plane object)
+t_vector	get_plane_normal(t_plane object)
 {
 	return (object.normal);
 }

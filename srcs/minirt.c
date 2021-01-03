@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:54:52 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/30 15:10:37 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:35:16 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		rerender(int key, t_options *options)
 	return (0);
 }
 
-int		fexit(int key, t_options *options)
+int		fexit(void)
 {
 	exit(EXIT_SUCCESS);
 }

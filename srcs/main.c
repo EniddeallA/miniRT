@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:13:07 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:39:22 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:35:17 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	minirt(int fd, int save)
 										&(options.image.bits_per_pixel),
 										&(options.image.line_length),
 										&(options.image.endian));
-	mlx_hook(options.window, 17, 0, fexit, &options);
+	mlx_hook(options.window, 17, 0, fexit, NULL);
 	mlx_key_hook(options.window, rerender, &options);
 	render(0, &options, 0);
 	mlx_loop(options.mlx);

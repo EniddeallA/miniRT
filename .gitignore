@@ -4,3 +4,6 @@ a.out.dSYM
 a.out
 output.bmp
 correction_sheet
+*.o
+minirt
+minirt.dSYM

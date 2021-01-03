@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 19:52:59 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/16 12:25:20 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:36:23 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ typedef struct	s_square
 }				t_square;
 
 int				intersect_with_square(t_ray r, t_square square, double *t);
-t_vector		get_square_normal(t_vector hit_point, t_square object);
+t_vector		get_square_normal(t_square object);
 
 #endif

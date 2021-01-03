@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 16:59:04 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/16 13:15:23 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:35:12 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct	s_options
 void			minirt(int fd, int save);
 void			render (int camera_number, t_options *options, int save);
 void			send_rays(t_options *options, int save);
-int				fexit(int key, t_options *options);
+int				fexit(void);
 int				rerender(int key, t_options *options);
 
 #endif

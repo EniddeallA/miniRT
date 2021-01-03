@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:20:01 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/30 15:21:01 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:37:04 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ t_vector	get_normal(t_vector hit_point, t_object *object)
 	if (object->type == SPHERE)
 		return (get_sphere_normal(hit_point, *(t_sphere*)object->ptr));
 	else if (object->type == PLANE)
-		return (get_plane_normal(hit_point, *(t_plane*)object->ptr));
+		return (get_plane_normal(*(t_plane*)object->ptr));
 	else if (object->type == SQUARE)
-		return (get_square_normal(hit_point, *(t_square*)object->ptr));
+		return (get_square_normal(*(t_square*)object->ptr));
 	else if (object->type == TRIANGLE)
-		return (get_triangle_normal(hit_point, *(t_triangle*)object->ptr));
+		return (get_triangle_normal(*(t_triangle*)object->ptr));
 	else
 		return (get_cylinder_normal(hit_point, *(t_cylinder*)object->ptr));
 }

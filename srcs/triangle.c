@@ -6,13 +6,13 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:24:36 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/30 15:21:32 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/03 15:36:40 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-t_vector	get_triangle_normal(t_vector hit_point, t_triangle triangle)
+t_vector	get_triangle_normal(t_triangle triangle)
 {
 	t_vector	result;
 	t_vector	a;
