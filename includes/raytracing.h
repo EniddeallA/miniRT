@@ -17,10 +17,8 @@
 # include "ray.h"
 # include "scene.h"
 
-
-int             intersert_with_all(t_list *obj, t_ray r, 
-                                    t_object **closest_object, double *t_min);
-int             intersect(t_ray r, t_object *obj, double *t);
-
+int	intersert_with_all(t_list *obj, t_ray r, 
+						t_object **closest_object, double *t_min);
+int	intersect(t_ray r, t_object *obj, double *t);
 
 #endif

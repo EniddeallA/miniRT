@@ -47,6 +47,6 @@ typedef struct	s_light
 	t_fcolor	color;
 }				t_light;
 
-void	init_scene(t_scene *scene);
+void			init_scene(t_scene *scene);
 
 #endif

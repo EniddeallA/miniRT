@@ -17,15 +17,15 @@
 # include "minirt.h"
 # include "scene.h"
 
-typedef struct  s_ray
+typedef struct	s_ray
 {
-    t_vector    origin;
-    t_vector    direction;
-}               t_ray;
+	t_vector	origin;
+	t_vector	direction;
+}				t_ray;
 
 t_ray			create_ray(t_vector origin, t_vector direction);
-t_ray           ray_to_pixel(int x, int y, t_scene *s);
-t_camera        pick_camera(t_scene *s);
-t_vector        get_direction(int x, int y, t_scene *s, t_camera cam);
+t_ray			ray_to_pixel(int x, int y, t_scene *s);
+t_camera		pick_camera(t_scene *s);
+t_vector		get_direction(int x, int y, t_scene *s, t_camera cam);
 
 #endif

@@ -20,11 +20,11 @@
 # define PLANES 1
 # define BITS_PER_PIXEL 24
 
-int         write_bmp(char *filename, unsigned int width, 
-                            unsigned int height, t_pixel **pixels);
-void        fill_header(unsigned char *header, unsigned int width, 
-                    unsigned int height);
-void        write_file(unsigned int height, unsigned int width,
-                    t_pixel **pixels, int fd);
+int		write_bmp(char *filename, unsigned int width, 
+					unsigned int height, t_pixel **pixels);
+void	fill_header(unsigned char *header, unsigned int width, 
+						unsigned int height);
+void	write_file(unsigned int height, unsigned int width,
+					t_pixel **pixels, int fd);
 
 #endif

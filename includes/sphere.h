@@ -16,23 +16,23 @@
 # include "vector.h"
 # include "ray.h"
 
-typedef struct  s_sphere
+typedef struct	s_sphere
 {
-    t_vector    p;
-    double      radius;
-}               t_sphere;
+	t_vector	p;
+	double		radius;
+}				t_sphere;
 
-typedef struct  s_quadratic
+typedef struct	s_quadratic
 {
-    double a;
-    double b;
-    double c;
-}               t_quadratic;
+	double		a;
+	double		b;
+	double		c;
+}				t_quadratic;
 
-int             intersect_with_sphere(t_ray r, t_sphere sphere, double *t);
-int             quadratic(double *t0, double *t1, t_sphere sphere, t_ray r);
-int             solve_quadratic(t_quadratic q, double *t0, double *t1);
-t_quadratic     quadratic_params(double a, double b, double c);
-t_vector        get_sphere_normal(t_vector hit_point, t_sphere object);
+int				intersect_with_sphere(t_ray r, t_sphere sphere, double *t);
+int				quadratic(double *t0, double *t1, t_sphere sphere, t_ray r);
+int				solve_quadratic(t_quadratic q, double *t0, double *t1);
+t_quadratic		quadratic_params(double a, double b, double c);
+t_vector		get_sphere_normal(t_vector hit_point, t_sphere object);
 
 #endif

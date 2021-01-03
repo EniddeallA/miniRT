@@ -16,15 +16,15 @@
 # include "ray.h"
 # include "vector.h"
 
-typedef struct  t_triangle
+typedef struct	t_triangle
 {
-    t_vector p0;
-    t_vector p1;
-    t_vector p2;
-}               t_triangle;
+	t_vector	p0;
+	t_vector	p1;
+	t_vector	p2;
+}				t_triangle;
 
-int         intersect_with_triangle(t_ray r, t_triangle triangle, double *t);
-int         inside_outside_test(t_triangle triangle, t_vector phit, t_vector n);
-t_vector    get_triangle_normal(t_vector hit_point, t_triangle object);
+int				intersect_with_triangle(t_ray r, t_triangle triangle, double *t);
+int				inside_outside_test(t_triangle triangle, t_vector phit, t_vector n);
+t_vector		get_triangle_normal(t_vector hit_point, t_triangle object);
 
 #endif

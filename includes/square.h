@@ -16,14 +16,14 @@
 # include "ray.h"
 # include "vector.h"
 
-typedef struct  s_square
+typedef struct	s_square
 {
-    t_vector	p;
+	t_vector	p;
 	t_vector	normal;
-	double      length;
-}               t_square;
+	double		length;
+}				t_square;
 
-int			intersect_with_square(t_ray r, t_square square, double *t);
-t_vector    get_square_normal(t_vector hit_point, t_square object);
+int				intersect_with_square(t_ray r, t_square square, double *t);
+t_vector		get_square_normal(t_vector hit_point, t_square object);
 
 #endif

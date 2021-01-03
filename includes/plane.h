@@ -18,11 +18,11 @@
 
 typedef struct  s_plane
 {
-    t_vector    p;
-    t_vector    normal;
-}               t_plane;
+	t_vector	p;
+	t_vector	normal;
+}				t_plane;
 
-int         intersect_with_plane(t_ray r, t_plane sphere, double *t);
-t_vector    get_plane_normal(t_vector hit_point, t_plane object);
+int				intersect_with_plane(t_ray r, t_plane sphere, double *t);
+t_vector		get_plane_normal(t_vector hit_point, t_plane object);
 
 #endif

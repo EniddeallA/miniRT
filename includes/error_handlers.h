@@ -15,17 +15,16 @@
 
 # include "includes.h"
 
-int     allowed_symbol(char c);
+int		allowed_symbol(char c);
 int		line_fields(char **splitted);
-int     check_line(char *line);
-void    handle_error(char *error);
-void    check_scene(t_scene *s);
+int		check_line(char *line);
+void	handle_error(char *error);
+void	check_scene(t_scene *s);
 int		check_fields(char **splitted);
 void	check_color(t_fcolor ambient);
 int		check_rgb(char **split);
 int		check_floaters(char *split);
-int     check_file(char *split);
+int		check_file(char *split);
 void	free_tab(char **tab);
-
 
 #endif

@@ -17,10 +17,10 @@
 
 typedef struct  s_matrix
 {
-    double m[4][4];
+    double      m[4][4];
 }               t_matrix;
 
-t_matrix    look_at(t_vector origin, t_vector direction);
-t_vector    multiply_matrix(t_matrix m, t_vector v);
+t_matrix        look_at(t_vector origin, t_vector direction);
+t_vector        multiply_matrix(t_matrix m, t_vector v);
 
 #endif

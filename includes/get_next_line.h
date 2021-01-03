@@ -19,14 +19,14 @@
 #  define BUFFER_SIZE 1000
 # endif
 
-typedef struct  s_memory
+typedef struct	s_memory
 {
-    char        *str;
-    int         lenght;
-    int         position;
-    int         fd;
-}               t_memory;
+	char		*str;
+	int			lenght;
+	int			position;
+	int			fd;
+}				t_memory;
 
-int get_next_line(int fd, char **line);
+int				get_next_line(int fd, char **line);
 
 #endif
