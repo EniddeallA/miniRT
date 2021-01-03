@@ -15,7 +15,6 @@
 
 # include "color.h"
 # include "list.h"
-# include "ray.h"
 
 typedef struct	s_scene
 {
@@ -50,7 +49,6 @@ typedef struct	s_options
 void			minirt(int fd, int save);
 void			render (int camera_number, t_options *options, int save);
 void			send_rays(t_options *options, int save);
-int				get_color(t_scene *s, t_ray r);
 int				fexit(int key, t_options *options);
 int				rerender(int key, t_options *options);
 

@@ -37,5 +37,6 @@ t_fcolor		diffuse_light(t_light light, t_scene *s, t_inter i);
 t_fcolor		compute_shading(t_light light, double coeff, t_inter i);
 t_fcolor		phong_specular_model(t_light light, t_inter i);
 double			compute_specular(t_light light, t_inter i);
+int				get_color(t_scene *s, t_ray r);
 
 #endif

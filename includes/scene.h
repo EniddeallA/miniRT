@@ -15,7 +15,7 @@
 
 # include "color.h"
 # include "vector.h"
-
+# include "minirt.h"
 
 typedef enum	e_object_type
 {
