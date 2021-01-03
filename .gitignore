@@ -1,9 +1,6 @@
-.vscode
-/srcs/a.out.dSYM
-/srcs/a.out
-/scenes/penis.rt
-correction_sheet
-/correction_sheet/*
 .DS_Store
+.vscode
+a.out.dSYM
 a.out
 output.bmp
+correction_sheet
