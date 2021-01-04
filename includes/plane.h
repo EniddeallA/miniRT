@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 19:52:55 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/03 15:36:09 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:22:51 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "ray.h"
 # include "vector.h"
 
-typedef struct  s_plane
+typedef struct	s_plane
 {
 	t_vector	p;
 	t_vector	normal;

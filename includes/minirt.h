@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 16:59:04 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/03 15:35:12 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:24:42 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct	s_scene
 	int			selected_camera;
 }				t_scene;
 
-typedef	struct	s_image 
+typedef	struct	s_image
 {
 	void		*img;
 	int			*addr;

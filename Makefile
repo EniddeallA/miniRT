@@ -6,7 +6,7 @@
 #    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/03 15:04:32 by akhalid           #+#    #+#              #
-#    Updated: 2021/01/03 15:39:18 by akhalid          ###   ########.fr        #
+#    Updated: 2021/01/03 15:43:32 by akhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,10 +51,13 @@ SRC =	main.c				\
 IDIR = ./includes/
 
 CFLAGS = -Wall -Wextra -Werror -g
+
 MLX = -lmlx -framework OpenGL -framework AppKit
 
 SRCS =	$(addprefix $(SDIR), $(SRC)) ./srcs/main.c
+
 OBJS =	*.o
+
 all:	$(NAME)
 
 $(NAME):	$(OBJS)

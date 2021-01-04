@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:13:07 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/03 15:35:17 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:18:29 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		main(int argc, char *argv[])
 	{
 		handle_error("Too few argument.");
 		return (0);
-	}	
+	}
 	else
 	{
 		if (!check_file(argv[1]))

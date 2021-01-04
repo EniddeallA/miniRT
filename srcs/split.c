@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:07:39 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:27:07 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:20:19 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ char			**ft_split(char const *s, char c)
 			result[y][j] = '\0';
 			y++;
 		}
-		if (s[i] == ',' && s[i + 1] == ',')
-				handle_error("Scene format error.");
 		while (s[i] == c && s[i])
 			i++;
 	}

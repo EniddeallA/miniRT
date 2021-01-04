@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handlers.c                                   :+:      :+:    :+:   */
+/*   error_handlers2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:46:07 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:26:02 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:18:12 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-int	check_floaters(char *split)
+int		check_floaters(char *split)
 {
 	int i;
 
@@ -26,7 +26,7 @@ int	check_floaters(char *split)
 	return (1);
 }
 
-int	check_rgb(char **split)
+int		check_rgb(char **split)
 {
 	int i;
 	int j;
@@ -46,7 +46,7 @@ int	check_rgb(char **split)
 	return (1);
 }
 
-int	check_file(char *split)
+int		check_file(char *split)
 {
 	int i;
 
@@ -63,9 +63,11 @@ int	check_file(char *split)
 	return (0);
 }
 
-void	free_tab(char **tab){
+void	free_tab(char **tab)
+{
+	int i;
 
-	int i = 0;
+	i = 0;
 	while (tab[i])
 		free(tab[i++]);
 	free(tab[i]);

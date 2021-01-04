@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:24:38 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/03 15:38:18 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:17:01 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ int			intersect_with_cylinder(t_ray r, t_cylinder cylinder, double *t)
 	if (t0 < 0 && t1 < 0)
 		return (0);
 	if (t1 < t0)
-		*t = t1 > 0 ? t1 : t0; 
+		*t = t1 > 0 ? t1 : t0;
 	if (t0 < t1)
-		*t = t0 > 0 ? t0 : t1; 
+		*t = t0 > 0 ? t0 : t1;
 	return (1);
 }
