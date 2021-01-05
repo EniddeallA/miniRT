@@ -6,7 +6,7 @@
 #    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/03 15:04:32 by akhalid           #+#    #+#              #
-#    Updated: 2021/01/03 15:43:32 by akhalid          ###   ########.fr        #
+#    Updated: 2021/01/05 19:16:18 by akhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,8 @@ MLX = -lmlx -framework OpenGL -framework AppKit
 
 SRCS =	$(addprefix $(SDIR), $(SRC)) ./srcs/main.c
 
-OBJS =	*.o
+OBJDIR = ./objs
+OBJS =	$(OBJDIR)/*.o
 
 all:	$(NAME)
 
@@ -65,13 +66,13 @@ $(NAME):	$(OBJS)
 
 $(OBJS):	$(SRCS)
 			@$(CC) -c $(CFLAGS) $(SRCS)
+			mv *.o $(OBJDIR)
 
 clean:
-	$(RM) *.o
+	$(RM) $(OBJS)
 
 fclean: clean
 		$(RM) $(NAME)
-		$(RM) $(OBJS)
 
 re:	fclean all
 
