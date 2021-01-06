@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:46:07 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/04 15:18:12 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 12:57:12 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,9 @@ void	free_tab(char **tab)
 		free(tab[i++]);
 	free(tab[i]);
 	free(tab);
+}
+
+int		cmp(char *s1, char *s2)
+{
+	return (ft_strlen(s1) == ft_strlen(s2));
 }

@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 19:41:13 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/04 15:24:37 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 12:57:41 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int		check_rgb(char **split);
 int		check_floaters(char *split);
 int		check_file(char *split);
 void	free_tab(char **tab);
+int		cmp(char *s1, char *s2);
 
 #endif

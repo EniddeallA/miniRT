@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:53:11 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/05 19:38:31 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 13:01:26 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,25 @@ void		parse_line(t_scene *s, char **split)
 {
 	if (line_fields(split) == 0)
 		return ;
-	else if (!ft_strncmp(split[0], "#", 1))
+	else if (split[0][0] == '#')
 		return ;
-	else if (!ft_strncmp(split[0], "R", 1))
+	else if (!ft_strncmp(split[0], "R", 1) && cmp(split[0], "R"))
 		parse_resolution(s, split);
-	else if (!ft_strncmp(split[0], "A", 1))
+	else if (!ft_strncmp(split[0], "A", 1) && cmp(split[0], "A"))
 		parse_ambient(s, split);
-	else if (!ft_strncmp(split[0], "cy", 2))
+	else if (!ft_strncmp(split[0], "cy", 2) && cmp(split[0], "cy"))
 		parse_cylinder(s, split);
-	else if (!ft_strncmp(split[0], "c", 1))
+	else if (!ft_strncmp(split[0], "c", 1) && cmp(split[0], "c"))
 		parse_camera(s, split);
-	else if (!ft_strncmp(split[0], "l", 1))
+	else if (!ft_strncmp(split[0], "l", 1) && cmp(split[0], "l"))
 		parse_light(s, split);
-	else if (!ft_strncmp(split[0], "sp", 2))
+	else if (!ft_strncmp(split[0], "sp", 2) && cmp(split[0], "sp"))
 		parse_sphere(s, split);
-	else if (!ft_strncmp(split[0], "pl", 2))
+	else if (!ft_strncmp(split[0], "pl", 2) && cmp(split[0], "pl"))
 		parse_plane(s, split);
-	else if (!ft_strncmp(split[0], "sq", 2))
+	else if (!ft_strncmp(split[0], "sq", 2) && cmp(split[0], "sq"))
 		parse_square(s, split);
-	else if (!ft_strncmp(split[0], "tr", 2))
+	else if (!ft_strncmp(split[0], "tr", 2) && cmp(split[0], "tr"))
 		parse_triangle(s, split);
 	else
 		handle_error("Unknown element in the scene.");
