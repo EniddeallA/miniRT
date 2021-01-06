@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:53:11 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/06 13:01:26 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 14:35:41 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ void		parse_color(t_fcolor *c, char *str)
 	if (check_fields(split) != 3 || !check_rgb(split))
 	{
 		free_tab(split);
-		handle_error("Color format : [R,G,B]");
+		handle_error("Color format : [R,G,B] <0,255>");
 	}
 	c->r = ft_atod(split[0]) / 256;
 	c->g = ft_atod(split[1]) / 256;
 	c->b = ft_atod(split[2]) / 256;
+	if (c->r >= 1 || c->r < 0 || c->g >= 1 ||
+		c->g < 0 || c->b >= 1 || c->b < 0)
+		handle_error("Color range : <0,255>");
 	free_tab(split);
 }
 

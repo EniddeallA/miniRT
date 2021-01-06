@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:13:07 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/04 15:18:29 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 15:16:21 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		main(int argc, char *argv[])
 	else
 	{
 		if (!check_file(argv[1]))
-			handle_error("Argument usage: File name error.");
+			handle_error("Only .rt files are handled.");
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
 			return (0);
 		if (argc == 2)

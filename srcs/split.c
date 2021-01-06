@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:07:39 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/04 15:20:19 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 15:40:22 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ char			**ft_split(char const *s, char c)
 	y = 0;
 	if (!s || !(result = malloc(sizeof(char *) * (count_substrings(s, c) + 1))))
 		return (NULL);
-	while (s[i])
+	while (s[i] && !(j = 0))
 	{
+		if ((i > 1 && s[i - 1] == c && s[i - 2] == c) || (i == 0 && s[i] == c))
+			handle_error("Format error.");
 		if (s[i] != c && s[i])
 		{
 			result[y] = malloc(sizeof(char *) * (to_sep(&s[i], c) + 1));
-			j = 0;
 			while (s[i] != c && s[i])
 				result[y][j++] = s[i++];
-			result[y][j] = '\0';
-			y++;
+			result[y++][j] = '\0';
 		}
 		while (s[i] == c && s[i])
 			i++;

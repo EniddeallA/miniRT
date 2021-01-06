@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 16:24:34 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/03 15:36:33 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/06 17:14:51 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int			intersect_with_square(t_ray r, t_square square, double *t)
 	t_vector	p0l0;
 	t_vector	intersection;
 
+	normalize_vector(&square.normal);
 	denom = dot_product(square.normal, r.direction);
 	if (fabs(denom) > 1e-6)
 	{
@@ -37,8 +38,7 @@ int			intersect_with_square(t_ray r, t_square square, double *t)
 				return (0);
 			if (fabs(intersection.z - square.p.z) > (square.length / 2))
 				return (0);
-			else
-				return (1);
+			return (1);
 		}
 		else
 			return (0);
