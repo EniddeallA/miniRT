@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:19:52 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/06 15:10:23 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/23 19:42:10 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	parse_light(t_scene *s, char **split)
 	l = malloc(sizeof(t_light));
 	parse_coords(&(l->origin), split[1]);
 	l->intensity = ft_atod(split[2]);
+	if (l->intensity < 0 || l->intensity > 1)
+		handle_error("Light intensity range : [0.0,1].");
 	parse_color(&(l->color), split[3]);
 	check_color(l->color);
 	ft_lstaddback(&(s->lights), ft_lstnew(l));

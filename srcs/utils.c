@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:07:39 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:27:18 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/23 19:42:59 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int				ft_atoi(const char *str)
 {
-	int		nbr;
+	long		nbr;
 	int		sign;
 
 	nbr = 0;
