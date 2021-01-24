@@ -6,7 +6,7 @@
 #    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/03 15:04:32 by akhalid           #+#    #+#              #
-#    Updated: 2021/01/05 19:16:18 by akhalid          ###   ########.fr        #
+#    Updated: 2021/01/24 16:26:09 by akhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = gcc
 
 RM = rm -rf
 
-NAME = minirt
+NAME = miniRT
 
 SDIR = ./srcs/
 
