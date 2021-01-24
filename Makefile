@@ -6,7 +6,7 @@
 #    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/03 15:04:32 by akhalid           #+#    #+#              #
-#    Updated: 2021/01/24 16:26:09 by akhalid          ###   ########.fr        #
+#    Updated: 2021/01/24 19:24:09 by akhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ $(NAME):	$(OBJS)
 
 $(OBJS):	$(SRCS)
 			@$(CC) -c $(CFLAGS) $(SRCS)
+			rm -rf ./objs; mkdir ./objs
 			mv *.o $(OBJDIR)
 
 clean:
