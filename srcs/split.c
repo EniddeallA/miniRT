@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:07:39 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/21 15:41:36 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/30 15:26:07 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,13 @@ static size_t	to_sep(char const *s, char c)
 void			check_format(char const *s, char c, int i)
 {
 	if (c != ' ' && c != '\t')
+	{
 		if (((!i && s[i] == c) ||
 				(i && s[i - 1] == c && s[i - 2] == c)))
 			handle_error("Format error.");
+		if (!s[i] && s[i - 1] == c)
+			handle_error("Format error.");
+	}
 }
 
 char			**ft_split(char const *s, char c)
@@ -76,6 +80,7 @@ char			**ft_split(char const *s, char c)
 		while (s[i] == c && s[i])
 			i++;
 	}
+	check_format(s, c, i);
 	result[y] = NULL;
 	return (result);
 }

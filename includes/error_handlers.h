@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 19:41:13 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/06 12:57:41 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/30 15:16:35 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		check_floaters(char *split);
 int		check_file(char *split);
 void	free_tab(char **tab);
 int		cmp(char *s1, char *s2);
+int		check_resolution(char *w, char *h);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:07:48 by akhalid           #+#    #+#             */
-/*   Updated: 2020/12/29 17:43:34 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/30 15:32:37 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		write_bmp(char *filename, unsigned int width,
 	int					fd;
 
 	fill_header(header, width, height);
-	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC);
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	write(fd, header, 54);
 	write_file(height, width, pixels, fd);
 	close(fd);

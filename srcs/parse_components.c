@@ -6,11 +6,32 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:19:52 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/24 16:19:05 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/01/30 15:16:16 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
+
+int		check_resolution(char *w, char *h)
+{
+	int i;
+
+	i = 0;
+	while (w[i])
+	{
+		if (i > 4)
+			return (1);
+		i++;
+	}
+	i = 0;
+	while (h[i])
+	{
+		if (i > 4)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 void	parse_resolution(t_scene *s, char **split)
 {
@@ -20,8 +41,16 @@ void	parse_resolution(t_scene *s, char **split)
 		handle_error("Resolution can only be set once in a scene.");
 	if (!check_floaters(split[1]) || !check_floaters(split[2]))
 		handle_error("Resolution can't be float.");
-	s->width = ft_atoi(split[1]);
-	s->height = ft_atoi(split[2]);
+	if (!check_resolution(split[1], split[2]))
+	{
+		s->width = ft_atoi(split[1]);
+		s->height = ft_atoi(split[2]);
+	}
+	else
+	{
+		s->width = 2560;
+		s->height = 1440;
+	}
 }
 
 void	parse_ambient(t_scene *s, char **split)

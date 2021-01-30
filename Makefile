@@ -6,7 +6,7 @@
 #    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/03 15:04:32 by akhalid           #+#    #+#              #
-#    Updated: 2021/01/24 19:24:09 by akhalid          ###   ########.fr        #
+#    Updated: 2021/01/30 15:31:08 by akhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ $(OBJS):	$(SRCS)
 
 clean:
 	$(RM) $(OBJS)
+	rm -rf output.bmp
 
 fclean: clean
 		$(RM) $(NAME)
