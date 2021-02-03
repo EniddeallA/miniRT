@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:07:39 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/24 16:23:11 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/02/03 14:55:11 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int				ft_atoi(const char *str)
 		nbr += (*str) - '0';
 		str++;
 	}
+	if ((*str) != '\0')
+		handle_error("Bad configuration file.");
 	if (nbr > 2147483647)
 		return (-1);
 	return (nbr * sign);

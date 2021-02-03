@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:46:07 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/30 15:35:48 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/02/03 15:05:33 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		check_file(char *split)
 			if ((split[i - 1] >= 'a' && split[i - 1] <= 'z') ||
 					(split[i - 1] >= 'A' && split[i - 1] <= 'Z') ||
 						(split[i - 1] >= '0' && split[i - 1] <= '9'))
-				if (split[i + 1] == 'r' && split[i + 2] == 't')
+				if (split[i + 1] == 'r' && split[i + 2] == 't' && !split[i + 3])
 					return (1);
 		i++;
 	}

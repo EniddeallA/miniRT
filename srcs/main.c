@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:13:07 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/30 15:36:12 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/02/03 15:04:13 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,15 @@ int		main(int argc, char *argv[])
 	else
 	{
 		if (!check_file(argv[1]))
-			handle_error("Only .rt files are handled.");
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
-			return (0);
+			handle_error("Only '.rt' files are handled.");
+		if ((fd = open(argv[1], O_RDONLY)) < 0)
+			handle_error("Make sure file exists.");
 		if (argc == 2)
 			minirt(fd, 0);
 		else if (!ft_strncmp(argv[2], "--save", 7))
 			minirt(fd, 1);
 		else if (ft_strncmp(argv[2], "--save", 7))
-			handle_error("Argument usage: 'file.rt' --save.");
+			handle_error("Argument usage: ./miniRT 'file.rt' --save.");
 	}
 	return (0);
 }

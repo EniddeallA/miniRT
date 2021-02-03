@@ -6,7 +6,7 @@
 /*   By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:19:52 by akhalid           #+#    #+#             */
-/*   Updated: 2021/01/30 15:16:16 by akhalid          ###   ########.fr       */
+/*   Updated: 2021/02/03 14:57:56 by akhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 int		check_resolution(char *w, char *h)
 {
 	int i;
+	int j;
 
 	i = 0;
-	while (w[i])
-	{
-		if (i > 4)
-			return (1);
+	while (w[i] == '0')
 		i++;
-	}
+	j = 0;
+	while (w[i] && w[i] >= '0' && w[i] <= '9' && (i += 1))
+		j++;
+	if (j > 4)
+			return (1);
 	i = 0;
-	while (h[i])
-	{
-		if (i > 4)
-			return (1);
+	while (h[i] == '0')
 		i++;
-	}
+	j = 0;
+	while (h[i] && h[i] >= '0' && h[i] <= '9' && (i += 1))
+		j++;
+	if (j > 4)
+			return (1);
 	return (0);
 }
 
